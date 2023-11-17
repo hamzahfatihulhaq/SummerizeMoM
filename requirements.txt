@@ -1,0 +1,7 @@
+transformers
+langchain
+gensim==3.8.2
+auto-gptq --extra-index-url https://huggingface.github.io/autogptq-index/whl/cu118/
+optimum
+striprtf
+tiktoken
