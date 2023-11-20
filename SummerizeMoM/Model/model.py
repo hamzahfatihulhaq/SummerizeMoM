@@ -9,7 +9,7 @@ def VicunaModels(model_name, config):
     
     model_name_or_path = model_name
 
-    model = AutoModelForCausalLM.from_pretrained(model_name_or_path, device_map="balanced", revision="main")
+    model = AutoModelForCausalLM.from_pretrained(model_name_or_path, device_map="cuda:0", revision="main")
     tokenizer = AutoTokenizer.from_pretrained(model_name_or_path)
 
     pipe = pipeline(
@@ -25,3 +25,6 @@ def VicunaModels(model_name, config):
     llm = HuggingFacePipeline(pipeline=pipe)
 
     return llm
+
+
+# ValueError: Found modules on cpu/disk. Using Exllama or Exllamav2 backend requires all the modules to be on GPU.You can deactivate exllama backend by setting `disable_exllama=True` in the quantization config object
