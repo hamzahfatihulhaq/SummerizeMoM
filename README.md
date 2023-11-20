@@ -79,6 +79,10 @@ config:
   repetition_penalty: 1.1
 ```
 
+## Note
 
-
+GPU Memori: 7431MiB
+Generating time: 
+1. 1841.7981882095337 s (30 m)
+2. 1744.6793882846832 s (29 m)
 

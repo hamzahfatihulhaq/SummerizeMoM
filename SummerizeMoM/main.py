@@ -6,6 +6,8 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 import argparse
 import os 
 import yaml
+from time import time
+
 def dir_path(string):
     if os.path.isfile(string):
         return string
@@ -47,6 +49,8 @@ if __name__=="__main__":
     # GET FILES
     path = args.file
 
+    start = time()
+
     with open(path) as infile:
         content = infile.read()
 
@@ -82,4 +86,6 @@ if __name__=="__main__":
         args.MoM  = "MoM_Summery.txt"
     with open(args.MoM, "w") as output_file:
         output_file.write(result)
+
+    print(f"time process : {start - time()} s")
     
